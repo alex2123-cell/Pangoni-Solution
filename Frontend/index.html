@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<body class="bg-dark text-white text-center p-4">
+
+    <h1 class="mb-4">Pangoni Solution Dashboard</h1>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                <button class="btn btn-primary w-100 mb-3" onclick="getSystem()">System Info</button>
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-success w-100 mb-3" onclick="optimize()">Optimize</button>
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-warning w-100 mb-3" onclick="checkAntivirus()">Antivirus</button>
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-info w-100 mb-3" onclick="checkNetwork()">Network</button>
+            </div>
+
+        </div>
+    </div>
+    <h4 class="text-secondary">System Monitoring Dashboard</h4>
+    <pre id="output" class="bg-black text-success p-3 mt-4 rounded"></pre>
+
+    <canvas id="cpuChart" class="mt-4"></canvas>
+
+    <script src="script.js"></script>
+</body>>
+    <title>Pangoni Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-white text-center p-4">
+
+    <h1 class="mb-4">Pangoni Solution Dashboard</h1>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                <button class="btn btn-primary w-100 mb-3" onclick="getSystem()">System Info</button>
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-success w-100 mb-3" onclick="optimize()">Optimize</button>
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-warning w-100 mb-3" onclick="checkAntivirus()">Antivirus</button>
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-info w-100 mb-3" onclick="checkNetwork()">Network</button>
+            </div>
+
+        </div>
+    </div>
+
+    <pre id="output" class="bg-black text-success p-3 mt-4 rounded"></pre>
+
+    <canvas id="cpuChart" class="mt-4"></canvas>
+
+    <script src="script.js"></script>
+</body>
+    <h1>Pangoni Solution Dashboard</h1>
+
+    <button onclick="getSystem()">System Info</button>
+    <button onclick="optimize()">Optimize</button>
+    <button onclick="checkAntivirus()">Check Antivirus</button>
+    <button onclick="checkNetwork()">Network Status</button>
+
+    <pre id="output"></pre>
+
+    <script src="script.js"></script>
+</body>
+</html>
