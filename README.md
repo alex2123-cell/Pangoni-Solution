@@ -1,13 +1,16 @@
 Pangoni-Solution/
 │
-Backend
+├── index.html
+├── script.js
+├── style.css
+Backend/
 │   ├── app.py
 │   ├── optimizer.py
 │   ├── antivirus_check.py
 │   ├── network_diagnostics.py
 │   ├── requirements.txt
 │
-Frontend
+Frontend/
 │   ├── index.html
 │   ├── script.js
 │   ├── style.css
