@@ -1,4 +1,4 @@
-Pangoni-Solution
+Pangoni-Solution/
 │
 Backend
 │   ├── app.py
