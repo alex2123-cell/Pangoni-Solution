@@ -1,0 +1,27 @@
+{
+  "name": "pangoni-solution",
+  "version": "1.0.0",
+  "description": "Pangoni-Solution/ │ ├── index.html ├── script.js ├── style.css Backend/ │   ├── app.py │   ├── optimizer.py │   ├── antivirus_check.py │   ├── network_diagnostics.py │   ├── requirements.txt │ Frontend/ │   ├── index.html │   ├── script.js │   ├── style.css",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex2123-cell/Pangoni-Solution.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alex2123-cell/Pangoni-Solution/issues"
+  },
+  "homepage": "https://github.com/alex2123-cell/Pangoni-Solution#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "os": "^0.1.2"
+  }
+}
