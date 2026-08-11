@@ -1,5 +1,5 @@
-const API = "https://your-app.onrender.com";
-// If using Codespaces, replace with your https://xxxx-3000.app.github.dev
+// Relative API calls (same origin)
+const API = "";
 
 let chart;
 
@@ -7,32 +7,46 @@ let chart;
 async function getSystem() {
     try {
         let res = await fetch(API + "/system");
+        if (!res.ok) throw new Error("Failed to fetch system info");
         let data = await res.json();
 
         display(data);
         drawChart(data);
     } catch (err) {
         console.error(err);
+        display({ error: String(err) });
     }
 }
 
-// Other actions
+// POST to optimize (state change)
 async function optimize() {
-    let res = await fetch(API + "/optimize");
-    let data = await res.text();
-    display(data);
+    try {
+        let res = await fetch(API + "/optimize", { method: "POST" });
+        let data = await res.json();
+        display(data);
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 async function checkAntivirus() {
-    let res = await fetch(API + "/antivirus");
-    let data = await res.text();
-    display(data);
+    try {
+        let res = await fetch(API + "/antivirus");
+        let data = await res.json();
+        display(data);
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 async function checkNetwork() {
-    let res = await fetch(API + "/network");
-    let data = await res.text();
-    display(data);
+    try {
+        let res = await fetch(API + "/network");
+        let data = await res.json();
+        display(data);
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 // Display output
@@ -41,7 +55,7 @@ function display(data) {
         typeof data === "string" ? data : JSON.stringify(data, null, 2);
 }
 
-// Draw chart (safe version)
+// Draw chart using backend values if present, otherwise random
 function drawChart(data) {
     const ctx = document.getElementById('cpuChart').getContext('2d');
 
@@ -49,22 +63,29 @@ function drawChart(data) {
         chart.destroy();
     }
 
-    // Dummy values (since backend doesn't provide real usage yet)
+    const cpu = (data && data.cpu_usage) ? data.cpu_usage : Math.round(Math.random() * 100);
+    const ram = (data && data.ram_usage) ? data.ram_usage : Math.round(Math.random() * 100);
+    const disk = (data && data.disk_usage) ? data.disk_usage : Math.round(Math.random() * 100);
+
     chart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ['CPU', 'RAM', 'Disk'],
             datasets: [{
                 label: 'Usage %',
-                data: [
-                    Math.random() * 100,
-                    Math.random() * 100,
-                    Math.random() * 100
-                ]
+                data: [cpu, ram, disk],
+                backgroundColor: ['#4e79a7', '#59a14f', '#f28e2b']
             }]
-g        }
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true, max: 100 }
+            }
+        }
     });
 }
 
 // Auto refresh every 3 seconds
 setInterval(getSystem, 3000);
+getSystem();

@@ -1,18 +1,40 @@
-body {
-    font-family: Arial;
-    text-align: center;
-    background: #f4f4f4;
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#4e79a7;
+  --muted:#94a3b8;
+  --success:#59a14f;
 }
 
-button {
-    margin: 10px;
-    padding: 10px;
-    cursor: pointer;
+body{
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #071021 0%, #0b1320 100%);
+  color: #e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
 }
 
-pre {
-    background: black;
-    color: lime;
-    padding: 15px;
-    margin-top: 20px;
+.navbar { background: rgba(0,0,0,0.3) !important; }
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.15));
+  border: 1px solid rgba(255,255,255,0.03);
+  color: #e6eef6;
+}
+
+button{ cursor:pointer; }
+
+pre{
+  background:#071018;
+  color: #8ef08e;
+  padding: 16px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+canvas{
+  background: transparent;
+  width:100% !important;
 }
